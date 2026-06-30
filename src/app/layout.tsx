@@ -5,6 +5,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Starfield } from "@/components/Starfield";
+import { ServiceWorkerRegister } from "@/components/ServiceWorkerRegister";
 import { siteConfig } from "@/site.config";
 import { webAppJsonLd } from "@/lib/seo";
 
@@ -24,7 +25,10 @@ export const metadata: Metadata = {
   creator: siteConfig.author.name,
   keywords: [...siteConfig.keywords],
   robots: { index: true, follow: true },
-  icons: { icon: "/favicon.svg" },
+  icons: { icon: "/favicon.svg", apple: "/favicon.svg" },
+  manifest: "/manifest.webmanifest",
+  appleWebApp: { capable: true, statusBarStyle: "black-translucent", title: siteConfig.shortName },
+  formatDetection: { telephone: false },
   other: { "google-adsense-account": siteConfig.adsense.client },
 };
 
@@ -32,6 +36,7 @@ export const viewport: Viewport = {
   themeColor: "#0A0E1A",
   width: "device-width",
   initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -54,6 +59,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main className="container-page py-8 sm:py-12">{children}</main>
         <Footer />
+        <ServiceWorkerRegister />
       </body>
     </html>
   );
