@@ -6,6 +6,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Starfield } from "@/components/Starfield";
 import { ServiceWorkerRegister } from "@/components/ServiceWorkerRegister";
+import { CookieConsent } from "@/components/CookieConsent";
 import { siteConfig } from "@/site.config";
 import { webAppJsonLd } from "@/lib/seo";
 
@@ -42,23 +43,13 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR" className={`${display.variable} ${sans.variable} ${mono.variable}`}>
-      <head>
-        {siteConfig.adsense.enabled && (
-          <Script
-            id="adsbygoogle-init"
-            async
-            strategy="afterInteractive"
-            crossOrigin="anonymous"
-            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${siteConfig.adsense.client}`}
-          />
-        )}
-      </head>
       <body>
         <Starfield />
         <Script id="ld-webapp" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppJsonLd()) }} />
         <Header />
         <main className="container-page py-8 sm:py-12">{children}</main>
         <Footer />
+        <CookieConsent />
         <ServiceWorkerRegister />
       </body>
     </html>

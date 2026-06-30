@@ -4,6 +4,7 @@ import {
   Clock, Calculator, CaseSensitive, Regex, Search, Menu, X, Copy, Check,
   Github, Gitlab, Rocket, Bus, Tag, Shield, ArrowRight, ExternalLink,
   Sparkles, RefreshCw, Download, ChevronRight, Wrench, Lock, Zap,
+  CreditCard, Thermometer, Dices, Sigma, CalendarDays,
   type LucideProps,
 } from "lucide-react";
 
@@ -13,6 +14,7 @@ const MAP = {
   Clock, Calculator, CaseSensitive, Regex, Search, Menu, X, Copy, Check,
   Github, Gitlab, Rocket, Bus, Tag, Shield, ArrowRight, ExternalLink,
   Sparkles, RefreshCw, Download, ChevronRight, Wrench, Lock, Zap,
+  CreditCard, Thermometer, Dices, Sigma, CalendarDays,
 } as const;
 
 export type IconName = keyof typeof MAP;

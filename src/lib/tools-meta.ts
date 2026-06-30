@@ -233,6 +233,66 @@ export const TOOLS: ToolMeta[] = [
     keywords: ["testador de regex", "regex online", "expressão regular", "regex tester"],
     icon: "Regex",
   },
+  {
+    slug: "gerador-cartao",
+    name: "Gerador de Cartão de Teste",
+    short: "Números de cartão válidos (Luhn).",
+    description:
+      "Gerador de números de cartão de crédito de teste (Visa, Mastercard, Amex) válidos pelo algoritmo de Luhn. Apenas para testar formulários — não funcionam em compras. Tudo no navegador.",
+    category: "Geradores",
+    keywords: ["gerador de cartão de crédito", "cartão de teste", "número luhn", "cartão fake"],
+    icon: "CreditCard",
+  },
+  {
+    slug: "conversor-temperatura",
+    name: "Conversor de Temperatura",
+    short: "Celsius, Fahrenheit e Kelvin.",
+    description:
+      "Conversor de temperatura online entre Celsius, Fahrenheit e Kelvin. Rápido, gratuito e processado no navegador.",
+    category: "Conversores",
+    keywords: ["conversor de temperatura", "celsius para fahrenheit", "kelvin", "graus"],
+    icon: "Thermometer",
+  },
+  {
+    slug: "gerador-numero",
+    name: "Gerador de Número Aleatório",
+    short: "Sorteio de números entre min e máx.",
+    description:
+      "Gerador de números aleatórios e sorteador online. Defina mínimo, máximo e quantidade. Útil para sorteios e testes. Gratuito e no navegador.",
+    category: "Geradores",
+    keywords: ["gerador de número aleatório", "sorteador", "número aleatório", "sortear número"],
+    icon: "Dices",
+  },
+  {
+    slug: "texto-binario",
+    name: "Texto para Binário",
+    short: "Converta texto em binário e voltar.",
+    description:
+      "Conversor de texto para binário e de binário para texto (8 bits por caractere). Online, gratuito e sem coletar dados.",
+    category: "Conversores",
+    keywords: ["texto para binário", "binário para texto", "conversor binário", "ascii binário"],
+    icon: "Binary",
+  },
+  {
+    slug: "numeros-romanos",
+    name: "Números Romanos",
+    short: "Converta decimal ↔ romano.",
+    description:
+      "Conversor de números romanos online: decimal para romano e romano para decimal (1 a 3999). Rápido e gratuito.",
+    category: "Conversores",
+    keywords: ["números romanos", "decimal para romano", "romano para decimal", "conversor romano"],
+    icon: "Sigma",
+  },
+  {
+    slug: "calculadora-datas",
+    name: "Calculadora de Datas",
+    short: "Dias entre datas e idade.",
+    description:
+      "Calculadora de datas online: dias entre duas datas e cálculo de idade a partir do nascimento. Tudo processado no navegador.",
+    category: "Conversores",
+    keywords: ["calculadora de datas", "dias entre datas", "calcular idade", "diferença de datas"],
+    icon: "CalendarDays",
+  },
 ];
 
 export const CATEGORIES: ToolCategory[] = [

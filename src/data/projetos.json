@@ -1,0 +1,165 @@
+{
+ "atualizado_em": "2026-06-30",
+ "total": 10,
+ "projetos": [
+  {
+   "fonte": "GitHub",
+   "nome": "abobiferramentas",
+   "full": "abobicaduco/abobiferramentas",
+   "descricao": "Next.js tools site + Python automation: YouTube Shorts & TikTok (3/day scheduling, SQLite, OAuth/Playwright). Bilingual docs (EN/pt-BR).",
+   "url": "https://github.com/abobicaduco/abobiferramentas",
+   "homepage": "https://abobiferramentas.vercel.app",
+   "linguagem": "Python",
+   "stars": 0,
+   "topics": [
+    "adsense",
+    "nextjs",
+    "online-tools",
+    "pwa",
+    "react",
+    "tailwindcss",
+    "typescript"
+   ],
+   "atualizado": "2026-06-30T11:38:39Z"
+  },
+  {
+   "fonte": "GitHub",
+   "nome": "lucro-dia",
+   "full": "abobicaduco/lucro-dia",
+   "descricao": "App de finanças simples (Flutter, Android) para registrar vendas e compras do dia a dia e ver lucro/prejuízo. Dados 100% locais no celular.",
+   "url": "https://github.com/abobicaduco/lucro-dia",
+   "homepage": "",
+   "linguagem": "Dart",
+   "stars": 0,
+   "topics": [],
+   "atualizado": "2026-06-29T16:07:42Z"
+  },
+  {
+   "fonte": "GitHub",
+   "nome": "mogi-onibus",
+   "full": "abobicaduco/mogi-onibus",
+   "descricao": "App Android (não oficial) com horários de ônibus de Mogi das Cruzes — offline, com atualização de horários via GitHub.",
+   "url": "https://github.com/abobicaduco/mogi-onibus",
+   "homepage": "",
+   "linguagem": "Dart",
+   "stars": 0,
+   "topics": [],
+   "atualizado": "2026-06-23T17:39:46Z"
+  },
+  {
+   "fonte": "GitHub",
+   "nome": "abobi-video-downloader",
+   "full": "abobicaduco/abobi-video-downloader",
+   "descricao": "Abobi Video Downloader — baixador Android (yt-dlp). Fork por @abobicaduco.",
+   "url": "https://github.com/abobicaduco/abobi-video-downloader",
+   "homepage": "",
+   "linguagem": "Kotlin",
+   "stars": 0,
+   "topics": [],
+   "atualizado": "2026-06-23T01:30:29Z"
+  },
+  {
+   "fonte": "GitHub",
+   "nome": "abobireacao",
+   "full": "abobicaduco/abobireacao",
+   "descricao": "AboBI Reacao - App Android para reagir a videos com camera",
+   "url": "https://github.com/abobicaduco/abobireacao",
+   "homepage": "",
+   "linguagem": "Dart",
+   "stars": 0,
+   "topics": [
+    "admob",
+    "android",
+    "camera",
+    "dart",
+    "flutter"
+   ],
+   "atualizado": "2026-06-22T23:34:49Z"
+  },
+  {
+   "fonte": "GitHub",
+   "nome": "InstaSaver",
+   "full": "abobicaduco/InstaSaver",
+   "descricao": "Instagram browser com download de fotos e vídeos em qualidade máxima — carrossel, perfis completos",
+   "url": "https://github.com/abobicaduco/InstaSaver",
+   "homepage": "",
+   "linguagem": "Dart",
+   "stars": 0,
+   "topics": [],
+   "atualizado": "2026-06-22T15:59:31Z"
+  },
+  {
+   "fonte": "GitHub",
+   "nome": "abobiplayer",
+   "full": "abobicaduco/abobiplayer",
+   "descricao": "Local Android video player (Flutter + media_kit)",
+   "url": "https://github.com/abobicaduco/abobiplayer",
+   "homepage": "",
+   "linguagem": "Dart",
+   "stars": 0,
+   "topics": [
+    "android",
+    "dart",
+    "flutter",
+    "media-kit",
+    "video-player"
+   ],
+   "atualizado": "2026-06-22T15:59:27Z"
+  },
+  {
+   "fonte": "GitHub",
+   "nome": "DownloadManager",
+   "full": "abobicaduco/DownloadManager",
+   "descricao": "AriaQueue — web download queue powered by aria2: React + TypeScript UI, Express backend, JSON-RPC",
+   "url": "https://github.com/abobicaduco/DownloadManager",
+   "homepage": "",
+   "linguagem": "TypeScript",
+   "stars": 0,
+   "topics": [
+    "aria2",
+    "download-manager",
+    "express",
+    "react",
+    "typescript"
+   ],
+   "atualizado": "2026-06-21T12:55:38Z"
+  },
+  {
+   "fonte": "GitHub",
+   "nome": "ServerCRON",
+   "full": "abobicaduco/ServerCRON",
+   "descricao": "Flask portal: file uploads + Python script scheduler (cron) with SQLite run history and Excel-based RBAC",
+   "url": "https://github.com/abobicaduco/ServerCRON",
+   "homepage": "",
+   "linguagem": "Python",
+   "stars": 0,
+   "topics": [
+    "cron",
+    "flask",
+    "python",
+    "scheduler",
+    "sqlite"
+   ],
+   "atualizado": "2026-06-21T12:55:32Z"
+  },
+  {
+   "fonte": "GitHub",
+   "nome": "abobi-shorts-upload-pipeline",
+   "full": "abobicaduco/abobi-shorts-upload-pipeline",
+   "descricao": "YouTube Shorts + TikTok upload automation — split, SQLite scheduling (3/day), batch upload for @abobicaduco",
+   "url": "https://github.com/abobicaduco/abobi-shorts-upload-pipeline",
+   "homepage": "",
+   "linguagem": "Python",
+   "stars": 0,
+   "topics": [
+    "automation",
+    "ffmpeg",
+    "playwright",
+    "python",
+    "tiktok",
+    "youtube-api"
+   ],
+   "atualizado": "2026-06-21T12:55:29Z"
+  }
+ ]
+}

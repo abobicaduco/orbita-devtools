@@ -4,6 +4,7 @@ import { UuidGen, SenhaGen, LoremGen, QrGen } from "./geradores";
 import { JsonFmt, Base64Tool, UrlTool, ContadorTool, CaseTool, RegexTool } from "./texto";
 import { HashTool, JwtTool } from "./seguranca";
 import { CoresTool, BaseTool, TimestampTool } from "./conversores";
+import { CartaoGen, TemperaturaTool, NumeroGen, BinarioTool, RomanosTool, DatasTool } from "./extras";
 
 const MAP: Record<string, React.ComponentType> = {
   "gerador-cpf": CpfGen,
@@ -27,6 +28,12 @@ const MAP: Record<string, React.ComponentType> = {
   "contador-texto": ContadorTool,
   "case-converter": CaseTool,
   "regex-tester": RegexTool,
+  "gerador-cartao": CartaoGen,
+  "conversor-temperatura": TemperaturaTool,
+  "gerador-numero": NumeroGen,
+  "texto-binario": BinarioTool,
+  "numeros-romanos": RomanosTool,
+  "calculadora-datas": DatasTool,
 };
 
 export function ToolRenderer({ slug }: { slug: string }) {

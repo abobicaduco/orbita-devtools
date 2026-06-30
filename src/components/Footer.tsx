@@ -21,6 +21,7 @@ export function Footer() {
           <FooterLink href="/ferramentas">Ferramentas</FooterLink>
           <FooterLink href="/onibus-mogi">Ônibus de Mogi</FooterLink>
           <FooterLink href="/ofertas">Ofertas</FooterLink>
+          <FooterLink href="/projetos">Projetos</FooterLink>
           <FooterLink href="/sobre">Sobre</FooterLink>
         </div>
 

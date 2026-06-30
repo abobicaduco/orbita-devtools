@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Script from "next/script";
 import { TOOLS } from "@/lib/tools-meta";
 import { ToolCard } from "@/components/ToolCard";
 import { AdSlot } from "@/components/AdSlot";
@@ -56,24 +57,58 @@ export default function Home() {
       <AdSlot className="mx-auto max-w-3xl" />
 
       {/* SEÇÕES EXTRAS */}
-      <section className="grid gap-4 md:grid-cols-2">
+      <section className="grid gap-4 md:grid-cols-3">
         <Link href="/onibus-mogi" className="card group flex items-center gap-4 p-6 hover:border-primary/50">
-          <span className="grid h-12 w-12 place-items-center rounded-xl bg-nebula"><Icon name="Bus" className="h-6 w-6 text-white" /></span>
+          <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-nebula"><Icon name="Bus" className="h-6 w-6 text-white" /></span>
           <div>
-            <h3 className="font-display text-lg font-semibold">Ônibus de Mogi das Cruzes</h3>
-            <p className="text-sm text-muted">Consulte horários das linhas da cidade.</p>
+            <h3 className="font-display text-base font-semibold">Ônibus de Mogi</h3>
+            <p className="text-sm text-muted">Horários das linhas da cidade.</p>
           </div>
-          <Icon name="ChevronRight" className="ml-auto h-5 w-5 text-muted transition-transform group-hover:translate-x-1" />
         </Link>
         <Link href="/ofertas" className="card group flex items-center gap-4 p-6 hover:border-secondary/50">
-          <span className="grid h-12 w-12 place-items-center rounded-xl bg-nebula"><Icon name="Tag" className="h-6 w-6 text-white" /></span>
+          <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-nebula"><Icon name="Tag" className="h-6 w-6 text-white" /></span>
           <div>
-            <h3 className="font-display text-lg font-semibold">Ofertas</h3>
-            <p className="text-sm text-muted">Achei nos vídeos? Busque pelo número do produto.</p>
+            <h3 className="font-display text-base font-semibold">Ofertas</h3>
+            <p className="text-sm text-muted">Busque pelo número do produto.</p>
           </div>
-          <Icon name="ChevronRight" className="ml-auto h-5 w-5 text-muted transition-transform group-hover:translate-x-1" />
         </Link>
+        <Link href="/projetos" className="card group flex items-center gap-4 p-6 hover:border-primary/50">
+          <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-nebula"><Icon name="Github" className="h-6 w-6 text-white" /></span>
+          <div>
+            <h3 className="font-display text-base font-semibold">Projetos</h3>
+            <p className="text-sm text-muted">Apps open source — ajude a testar.</p>
+          </div>
+        </Link>
+      </section>
+
+      {/* FAQ */}
+      <section className="space-y-5">
+        <h2 className="font-display text-2xl font-bold sm:text-3xl">Perguntas frequentes</h2>
+        <div className="space-y-3">
+          {FAQ.map((f) => (
+            <details key={f.q} className="card group p-5">
+              <summary className="flex cursor-pointer items-center justify-between font-medium text-white">
+                {f.q}
+                <Icon name="ChevronRight" className="h-5 w-5 text-muted transition-transform group-open:rotate-90" />
+              </summary>
+              <p className="mt-3 text-sm leading-relaxed text-muted">{f.a}</p>
+            </details>
+          ))}
+        </div>
+        <Script id="ld-faq" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: FAQ.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+        }) }} />
       </section>
     </div>
   );
 }
+
+const FAQ = [
+  { q: "As ferramentas são gratuitas?", a: "Sim. Todas as ferramentas do Órbita são 100% gratuitas e open source, sem necessidade de cadastro." },
+  { q: "Vocês guardam o que eu digito?", a: "Não. As ferramentas rodam inteiramente no seu navegador; nada do que você digita é enviado ou armazenado em servidores." },
+  { q: "Os geradores de CPF/CNPJ/cartão são reais?", a: "Não. Os números são fictícios, válidos apenas pelos dígitos verificadores, para testar formulários e sistemas. Não use para fraudes." },
+  { q: "Os horários de ônibus de Mogi são oficiais?", a: "São extraídos do portal oficial da Prefeitura de Mogi das Cruzes, apenas para consulta. Confirme sempre na fonte oficial antes de se programar." },
+  { q: "Posso usar o código do site?", a: "Sim. Todo o código é open source sob licença MIT e está disponível no GitHub e no GitLab." },
+];
