@@ -7,8 +7,8 @@ export const siteConfig = {
   tagline: "Ferramentas para desenvolvedores",
   description:
     "Órbita reúne dezenas de ferramentas online gratuitas para desenvolvedores — geradores e validadores de CPF/CNPJ, JSON, Base64, hash, UUID, senhas, QR Code e muito mais. Tudo processado no seu navegador, sem armazenar nenhum dado. Open source.",
-  // Troque para o seu domínio quando configurar (ex.: https://orbita.dev)
-  url: "https://orbita-devtools.vercel.app",
+  // Domínio principal de produção.
+  url: "https://abobiferramentas.com",
   locale: "pt-BR",
   author: {
     name: "Carlos Eduardo Costa Lima da Silva",
