@@ -76,7 +76,7 @@ export default async function LinhaPage({ params }: { params: Promise<{ linha: s
                   </p>
                   <div className="flex flex-wrap gap-1.5">
                     {b.horarios.map((h) => (
-                      <span key={h} className="rounded-lg border border-white/10 bg-base/60 px-2 py-1 font-mono text-xs text-primary-glow">
+                      <span key={h} className="rounded-lg border border-white/10 bg-space/60 px-2 py-1 font-mono text-xs text-primary-glow">
                         {h}
                       </span>
                     ))}

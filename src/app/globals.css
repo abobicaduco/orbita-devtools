@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  @apply bg-base text-[#E6EDF3] font-sans antialiased;
+  @apply bg-space text-[#E6EDF3] font-sans antialiased;
   background-image:
     radial-gradient(ellipse at 50% -10%, rgba(27, 37, 64, 0.6) 0%, transparent 60%),
     radial-gradient(ellipse at 90% 10%, rgba(139, 92, 246, 0.08) 0%, transparent 45%),
@@ -40,7 +40,7 @@ body {
     @apply btn border border-white/10 bg-white/5 text-[#E6EDF3] hover:border-primary/50 hover:bg-white/10;
   }
   .input {
-    @apply w-full rounded-xl border border-white/10 bg-base/60 px-3.5 py-2.5 text-sm text-[#E6EDF3] placeholder:text-muted/60 focus:border-primary/60 focus:outline-none focus:ring-1 focus:ring-primary/40;
+    @apply w-full rounded-xl border border-white/10 bg-space/60 px-3.5 py-2.5 text-sm text-[#E6EDF3] placeholder:text-muted/60 focus:border-primary/60 focus:outline-none focus:ring-1 focus:ring-primary/40;
   }
   .gradient-text {
     @apply bg-nebula bg-clip-text text-transparent;

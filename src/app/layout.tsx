@@ -44,6 +44,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pt-BR" className={`${display.variable} ${sans.variable} ${mono.variable}`}>
       <body>
+        {/* AdSense sempre no <head>: o robô de revisão do Google precisa encontrar
+            o código em toda página; a personalização é controlada pelo consentimento. */}
+        {siteConfig.adsense.enabled && (
+          <Script
+            id="adsbygoogle-js"
+            async
+            strategy="afterInteractive"
+            crossOrigin="anonymous"
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${siteConfig.adsense.client}`}
+          />
+        )}
         <Starfield />
         <Script id="ld-webapp" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppJsonLd()) }} />
         <Header />

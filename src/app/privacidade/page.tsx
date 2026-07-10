@@ -49,8 +49,8 @@ export default function PrivacidadePage() {
       <Section title="4. Cookies e consentimento">
         <p>
           Para manter o site gratuito, exibimos anúncios via <strong className="text-white">Google AdSense</strong>,
-          que usa cookies. <strong className="text-white">Os scripts de anúncio só são carregados após o seu consentimento</strong>{" "}
-          no banner de cookies. Se você recusar, os cookies de anúncio não são ativados.
+          que usa cookies. <strong className="text-white">Se você recusar no banner de cookies, os anúncios exibidos
+          passam a ser não personalizados</strong> — sem cookies de perfil de interesse.
         </p>
         <p>
           Você pode rever sua escolha a qualquer momento limpando os dados do site no navegador

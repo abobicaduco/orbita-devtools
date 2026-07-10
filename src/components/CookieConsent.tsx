@@ -1,23 +1,21 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { siteConfig } from "@/site.config";
 import { Icon } from "./Icon";
 
 const KEY = "orbita-consent-v1";
 
-/** Carrega o script do AdSense só depois do consentimento. */
-function loadAds() {
-  if (!siteConfig.adsense.enabled) return;
-  if (document.getElementById("adsbygoogle-js")) return;
-  const s = document.createElement("script");
-  s.id = "adsbygoogle-js";
-  s.async = true;
-  s.crossOrigin = "anonymous";
-  s.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${siteConfig.adsense.client}`;
-  document.head.appendChild(s);
-  (window as unknown as { __orbitaAds?: boolean }).__orbitaAds = true;
-  window.dispatchEvent(new Event("orbita-consent-changed"));
+type AdsGlobal = { requestNonPersonalizedAds?: number; push?: (v: unknown) => void };
+
+/**
+ * O script do AdSense é carregado sempre (no layout) — exigência prática da
+ * revisão do Google. O consentimento controla apenas a personalização:
+ * "Rejeitar" ativa anúncios NÃO personalizados (sem cookies de perfil).
+ */
+function applyConsent(val: "accepted" | "rejected") {
+  const w = window as unknown as { adsbygoogle?: AdsGlobal };
+  w.adsbygoogle = w.adsbygoogle || ({} as AdsGlobal);
+  w.adsbygoogle.requestNonPersonalizedAds = val === "rejected" ? 1 : 0;
 }
 
 export function CookieConsent() {
@@ -25,14 +23,14 @@ export function CookieConsent() {
 
   useEffect(() => {
     const v = localStorage.getItem(KEY);
-    if (v === "accepted") loadAds();
-    else if (v !== "rejected") setShow(true);
+    if (v === "accepted" || v === "rejected") applyConsent(v);
+    else setShow(true);
   }, []);
 
   const choose = (val: "accepted" | "rejected") => {
     localStorage.setItem(KEY, val);
+    applyConsent(val);
     setShow(false);
-    if (val === "accepted") loadAds();
   };
 
   if (!show) return null;
@@ -45,6 +43,7 @@ export function CookieConsent() {
             <Icon name="Lock" className="mt-0.5 h-5 w-5 shrink-0 text-primary-glow" />
             <p className="text-sm text-muted">
               Usamos cookies apenas para exibir anúncios (Google AdSense) e manter o site gratuito.
+              Ao rejeitar, você continua vendo anúncios, mas <strong className="text-white">não personalizados</strong>.
               As ferramentas funcionam sem coletar seus dados. Veja a{" "}
               <Link href="/privacidade" className="text-primary-glow underline">política de privacidade</Link>.
             </p>

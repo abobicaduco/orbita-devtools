@@ -8,6 +8,7 @@ import { ToolCard } from "@/components/ToolCard";
 import { AdSlot } from "@/components/AdSlot";
 import { Icon } from "@/components/Icon";
 import { buildMetadata, toolJsonLd, breadcrumbJsonLd } from "@/lib/seo";
+import { TOOL_CONTENT } from "@/lib/tool-content";
 
 export function generateStaticParams() {
   return TOOLS.map((t) => ({ slug: t.slug }));
@@ -31,6 +32,7 @@ export default async function ToolPage({ params }: { params: Promise<{ slug: str
   if (!tool) notFound();
 
   const related = TOOLS.filter((t) => t.category === tool.category && t.slug !== tool.slug).slice(0, 3);
+  const content = TOOL_CONTENT[tool.slug];
 
   return (
     <article className="mx-auto max-w-3xl space-y-8">
@@ -48,7 +50,7 @@ export default async function ToolPage({ params }: { params: Promise<{ slug: str
       </nav>
 
       <header className="flex items-start gap-4">
-        <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl border border-white/10 bg-base/60 text-primary-glow">
+        <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl border border-white/10 bg-space/60 text-primary-glow">
           <Icon name={tool.icon} className="h-7 w-7" />
         </span>
         <div>
@@ -63,14 +65,57 @@ export default async function ToolPage({ params }: { params: Promise<{ slug: str
 
       <AdSlot />
 
-      <section className="prose-sm space-y-2 text-sm leading-relaxed text-muted">
+      <section className="space-y-3 text-sm leading-relaxed text-muted">
         <h2 className="font-display text-lg font-semibold text-white">Sobre o {tool.name}</h2>
-        <p>{tool.description}</p>
+        {(content?.about ?? [tool.description]).map((p) => (
+          <p key={p.slice(0, 32)}>{p}</p>
+        ))}
         <p>
           Esta ferramenta roda inteiramente no seu navegador: <strong className="text-white">nenhum dado é enviado
           ou armazenado</strong>. O código é aberto — você pode auditá-lo e contribuir no repositório.
         </p>
       </section>
+
+      {content && (
+        <section className="space-y-3 text-sm leading-relaxed text-muted">
+          <h2 className="font-display text-lg font-semibold text-white">Como usar</h2>
+          <ol className="list-inside list-decimal space-y-1.5">
+            {content.howTo.map((step) => (
+              <li key={step.slice(0, 32)}>{step}</li>
+            ))}
+          </ol>
+        </section>
+      )}
+
+      {content && content.faq.length > 0 && (
+        <section className="space-y-4">
+          <h2 className="font-display text-lg font-semibold text-white">Perguntas frequentes</h2>
+          <div className="space-y-3">
+            {content.faq.map((f) => (
+              <details key={f.q} className="card group p-4">
+                <summary className="flex cursor-pointer items-center justify-between gap-3 text-sm font-medium text-white">
+                  {f.q}
+                  <Icon name="ChevronRight" className="h-4 w-4 shrink-0 text-muted transition-transform group-open:rotate-90" />
+                </summary>
+                <p className="mt-3 text-sm leading-relaxed text-muted">{f.a}</p>
+              </details>
+            ))}
+          </div>
+          <Script
+            id="ld-tool-faq"
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: content.faq.map((f) => ({
+                "@type": "Question",
+                name: f.q,
+                acceptedAnswer: { "@type": "Answer", text: f.a },
+              })),
+            }) }}
+          />
+        </section>
+      )}
 
       {related.length > 0 && (
         <section className="space-y-4">

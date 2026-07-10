@@ -16,7 +16,7 @@ const NAV = [
 export function Header() {
   const [open, setOpen] = useState(false);
   return (
-    <header className="sticky top-0 z-40 border-b border-white/10 bg-base/80 backdrop-blur-md">
+    <header className="sticky top-0 z-40 border-b border-white/10 bg-space/80 backdrop-blur-md">
       <div className="container-page flex h-16 items-center justify-between">
         <Link href="/" className="group flex items-center gap-2" onClick={() => setOpen(false)}>
           <span className="grid h-9 w-9 place-items-center rounded-xl bg-nebula shadow-glow-purple">

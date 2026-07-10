@@ -17,7 +17,7 @@ export function Result({ value, multiline, className }: { value: string; multili
   }
   return (
     <div className="flex items-center gap-2">
-      <code className="flex-1 truncate rounded-xl border border-white/10 bg-base/60 px-3.5 py-2.5 font-mono text-sm text-primary-glow">
+      <code className="flex-1 truncate rounded-xl border border-white/10 bg-space/60 px-3.5 py-2.5 font-mono text-sm text-primary-glow">
         {value || "—"}
       </code>
       <CopyButton value={value} />

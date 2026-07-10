@@ -5,7 +5,9 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        base: "#0A0E1A",
+        // "space" (não "base") — `text-base` é tamanho de fonte no Tailwind;
+        // uma cor chamada `base` sobrescreve e deixa o texto quase preto.
+        space: "#0A0E1A",
         surface: "#131A2A",
         elevated: "#1B2540",
         primary: {

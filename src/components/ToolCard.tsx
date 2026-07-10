@@ -9,7 +9,7 @@ export function ToolCard({ tool }: { tool: ToolMeta }) {
       className="group card flex flex-col gap-3 p-5 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-glow"
     >
       <div className="flex items-center justify-between">
-        <span className="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-base/60 text-primary-glow transition-colors group-hover:border-primary/40">
+        <span className="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-space/60 text-primary-glow transition-colors group-hover:border-primary/40">
           <Icon name={tool.icon} className="h-5 w-5" />
         </span>
         <span className="label-hud">{tool.category}</span>
