@@ -6,7 +6,8 @@ import { BUS_LINES } from "@/data/onibus-mogi";
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   const base = siteConfig.url;
-  const staticRoutes = ["", "/ferramentas", "/onibus-mogi", "/ofertas", "/projetos", "/sobre", "/privacidade", "/termos"];
+  // /ofertas fica fora do sitemap (noindex) até a vitrine ter produtos reais.
+  const staticRoutes = ["", "/ferramentas", "/onibus-mogi", "/projetos", "/sobre", "/contato", "/privacidade", "/termos"];
 
   const staticEntries: MetadataRoute.Sitemap = staticRoutes.map((r) => ({
     url: `${base}${r}`,

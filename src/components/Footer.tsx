@@ -23,6 +23,7 @@ export function Footer() {
           <FooterLink href="/ofertas">Ofertas</FooterLink>
           <FooterLink href="/projetos">Projetos</FooterLink>
           <FooterLink href="/sobre">Sobre</FooterLink>
+          <FooterLink href="/contato">Contato</FooterLink>
         </div>
 
         <div className="space-y-2">

@@ -25,11 +25,34 @@ export async function generateMetadata({ params }: { params: Promise<{ linha: st
   });
 }
 
+/** Resumo textual da linha gerado dos dados — texto único por página. */
+function resumoLinha(line: NonNullable<ReturnType<typeof getLine>>): string | null {
+  const util = line.grade.filter((g) => g.dia === "Dia Útil");
+  const todos = util.flatMap((g) => g.horarios).sort();
+  if (todos.length === 0) return null;
+  const primeiro = todos[0];
+  const ultimo = todos[todos.length - 1];
+  const diasAtendidos = [...new Set(line.grade.map((g) => g.dia))];
+  const fimDeSemana =
+    diasAtendidos.length > 1
+      ? ` A linha também circula em ${diasAtendidos.filter((d) => d !== "Dia Útil").join(" e ").toLowerCase()}, com grade reduzida.`
+      : " A linha não possui horários cadastrados para fins de semana e feriados.";
+  const trajeto = line.pontoA && line.pontoB ? ` no trajeto entre ${line.pontoA} e ${line.pontoB}` : "";
+  const operadora = line.empresa ? `, operada pela ${line.empresa},` : "";
+  return (
+    `A linha ${line.linha} (${line.nome})${operadora} realiza ${todos.length} partidas em dias úteis${trajeto}, ` +
+    `com a primeira saída às ${primeiro} e a última às ${ultimo}.${fimDeSemana} ` +
+    `Os horários abaixo vêm do portal oficial da Prefeitura de Mogi das Cruzes e servem como referência de consulta — ` +
+    `em dias de chuva forte ou obras, confirme na operadora antes de se programar.`
+  );
+}
+
 export default async function LinhaPage({ params }: { params: Promise<{ linha: string }> }) {
   const { linha } = await params;
   const line = getLine(decodeURIComponent(linha));
   if (!line) notFound();
 
+  const resumo = resumoLinha(line);
   const days = DAY_ORDER
     .map((d) => ({ dia: d, blocks: line.grade.filter((g) => g.dia === d) }))
     .filter((g) => g.blocks.length > 0);
@@ -61,6 +84,8 @@ export default async function LinhaPage({ params }: { params: Promise<{ linha: s
           </p>
         </div>
       </header>
+
+      {resumo && <p className="text-sm leading-relaxed text-muted">{resumo}</p>}
 
       <div className="space-y-6">
         {days.map(({ dia, blocks }) => (
