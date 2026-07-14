@@ -54,7 +54,7 @@ export default function Home() {
         </div>
       </section>
 
-      <AdSlot className="mx-auto max-w-3xl" />
+      <AdSlot slot={siteConfig.adsense.slotDisplay} className="mx-auto max-w-3xl" />
 
       {/* SEÇÕES EXTRAS */}
       <section className="grid gap-4 md:grid-cols-3">

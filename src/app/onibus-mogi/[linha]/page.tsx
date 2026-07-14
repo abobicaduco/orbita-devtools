@@ -6,6 +6,7 @@ import { BUS_LINES, getLine, BUS_DISCLAIMER } from "@/data/onibus-mogi";
 import { AdSlot } from "@/components/AdSlot";
 import { Icon } from "@/components/Icon";
 import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
+import { siteConfig } from "@/site.config";
 
 const DAY_ORDER = ["Dia Útil", "Sábado", "Domingo/Feriado"];
 
@@ -113,7 +114,7 @@ export default async function LinhaPage({ params }: { params: Promise<{ linha: s
         ))}
       </div>
 
-      <AdSlot />
+      <AdSlot slot={siteConfig.adsense.slotDisplay} />
 
       <p className="rounded-xl border border-warn/30 bg-warn/10 px-4 py-3 text-xs text-warn">{BUS_DISCLAIMER}</p>
 

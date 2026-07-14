@@ -79,7 +79,7 @@ export default function ProjetosPage() {
         ))}
       </div>
 
-      <AdSlot className="mx-auto max-w-3xl" />
+      <AdSlot slot={siteConfig.adsense.slotDisplay} className="mx-auto max-w-3xl" />
 
       <section className="card space-y-3 p-6 text-center">
         <h2 className="font-display text-xl font-semibold">Quer ajudar? 🙌</h2>

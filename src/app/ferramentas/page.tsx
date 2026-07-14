@@ -3,6 +3,7 @@ import { ToolsExplorer } from "@/components/ToolsExplorer";
 import { AdSlot } from "@/components/AdSlot";
 import { buildMetadata } from "@/lib/seo";
 import { TOOLS } from "@/lib/tools-meta";
+import { siteConfig } from "@/site.config";
 
 export const metadata: Metadata = buildMetadata({
   title: "Todas as ferramentas",
@@ -26,7 +27,7 @@ export default function FerramentasPage() {
         <p className="text-muted">{TOOLS.length} ferramentas, todas processadas no seu navegador.</p>
       </header>
       <ToolsExplorer />
-      <AdSlot className="mx-auto max-w-3xl pt-6" />
+      <AdSlot slot={siteConfig.adsense.slotDisplay} className="mx-auto max-w-3xl pt-6" />
 
       <section className="space-y-4 border-t border-white/10 pt-8">
         <h2 className="font-display text-xl font-bold">O que você encontra em cada categoria</h2>

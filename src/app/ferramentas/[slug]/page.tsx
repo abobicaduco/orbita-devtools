@@ -9,6 +9,7 @@ import { AdSlot } from "@/components/AdSlot";
 import { Icon } from "@/components/Icon";
 import { buildMetadata, toolJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 import { TOOL_CONTENT } from "@/lib/tool-content";
+import { siteConfig } from "@/site.config";
 
 export function generateStaticParams() {
   return TOOLS.map((t) => ({ slug: t.slug }));
@@ -63,7 +64,7 @@ export default async function ToolPage({ params }: { params: Promise<{ slug: str
         <ToolRenderer slug={tool.slug} />
       </div>
 
-      <AdSlot />
+      <AdSlot slot={siteConfig.adsense.slotDisplay} />
 
       <section className="space-y-3 text-sm leading-relaxed text-muted">
         <h2 className="font-display text-lg font-semibold text-white">Sobre o {tool.name}</h2>

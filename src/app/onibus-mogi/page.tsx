@@ -3,6 +3,7 @@ import { BusExplorer } from "@/components/BusExplorer";
 import { AdSlot } from "@/components/AdSlot";
 import { BUS_INDEX, BUS_META, BUS_DISCLAIMER } from "@/data/onibus-mogi";
 import { buildMetadata } from "@/lib/seo";
+import { siteConfig } from "@/site.config";
 
 export const metadata: Metadata = buildMetadata({
   title: "Horários de ônibus de Mogi das Cruzes",
@@ -22,7 +23,7 @@ export default function OnibusMogiPage() {
         </p>
       </header>
       <BusExplorer lines={BUS_INDEX} />
-      <AdSlot className="mx-auto max-w-3xl" />
+      <AdSlot slot={siteConfig.adsense.slotDisplay} className="mx-auto max-w-3xl" />
       <p className="rounded-xl border border-warn/30 bg-warn/10 px-4 py-3 text-xs text-warn">{BUS_DISCLAIMER}</p>
     </div>
   );

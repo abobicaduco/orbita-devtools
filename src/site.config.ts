@@ -25,6 +25,8 @@ export const siteConfig = {
   adsense: {
     client: "ca-pub-7169685901436487",
     enabled: true,
+    // Bloco de display responsivo, reutilizado nos <AdSlot /> pelo site.
+    slotDisplay: "2608875673",
   },
   keywords: [
     "ferramentas para desenvolvedores",
