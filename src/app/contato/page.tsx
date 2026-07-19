@@ -14,14 +14,14 @@ const CANAIS = [
     icon: "Mail",
     titulo: "E-mail",
     desc: "Para sugestões, correções, parcerias ou qualquer assunto.",
-    label: "abobicaduco@gmail.com",
-    href: "mailto:abobicaduco@gmail.com",
+    label: "abobicarlo@gmail.com",
+    href: "mailto:abobicarlo@gmail.com",
   },
   {
     icon: "Github",
     titulo: "GitHub Issues",
     desc: "Achou um bug ou quer pedir uma ferramenta nova? Abra uma issue no repositório — o site é open source.",
-    label: "abobicaduco/orbita-devtools",
+    label: "caducosilva/orbita-devtools",
     href: `${siteConfig.repo.github}/issues`,
   },
   {

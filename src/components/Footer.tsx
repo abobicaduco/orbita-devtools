@@ -43,13 +43,17 @@ export function Footer() {
           <a href={siteConfig.author.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-muted hover:text-white">
             <Icon name="ExternalLink" className="h-4 w-4" /> LinkedIn
           </a>
+          <p className="pt-2 text-sm text-muted">
+            Apoie o projeto — doações via PIX (chave aleatória):
+            <span className="mt-1 block break-all font-mono text-xs text-primary">{siteConfig.pixDoacoes}</span>
+          </p>
         </div>
       </div>
 
       <div className="border-t border-white/10">
         <div className="container-page flex flex-col items-center justify-between gap-2 py-6 text-xs text-muted sm:flex-row">
           <p>© {new Date().getFullYear()} {siteConfig.name}. Licença MIT.</p>
-          <p>Feito por {siteConfig.author.name}.</p>
+          <p>Feito por {siteConfig.author.name} (caducosilva).</p>
         </div>
       </div>
     </footer>

@@ -11,7 +11,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "Apps e projetos open source de Carlos Eduardo — apps Android (Flutter/Kotlin), automações Python, ferramentas web. Veja o código no GitHub/GitLab e ajude a testar.",
   path: "/projetos",
-  keywords: ["projetos open source", "apps android", "flutter", "portfólio desenvolvedor", "github abobicaduco"],
+  keywords: ["projetos open source", "apps android", "flutter", "portfólio desenvolvedor", "github caducosilva"],
 });
 
 const LANG_COLOR: Record<string, string> = {

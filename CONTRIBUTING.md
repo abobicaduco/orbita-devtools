@@ -5,7 +5,7 @@ Obrigado pelo interesse! Contribuições são bem-vindas. 🚀
 ## Como rodar localmente
 
 ```bash
-git clone https://github.com/abobicaduco/orbita-devtools.git
+git clone https://github.com/caducosilva/orbita-devtools.git
 cd orbita-devtools
 npm install
 npm run dev   # http://localhost:3000

@@ -2,25 +2,27 @@
  * Configuração central do site — troque a marca/domínio aqui em 1 lugar.
  */
 export const siteConfig = {
-  name: "AboBI Ferramentas",
-  shortName: "AboBI",
+  name: "caducosilva ferramentas",
+  shortName: "caducosilva",
   tagline: "Ferramentas para desenvolvedores",
   description:
-    "AboBI Ferramentas reúne dezenas de ferramentas online gratuitas para desenvolvedores — geradores e validadores de CPF/CNPJ, JSON, Base64, hash, UUID, senhas, QR Code e muito mais. Tudo processado no seu navegador, sem armazenar nenhum dado. Open source.",
+    "caducosilva ferramentas reúne dezenas de ferramentas online gratuitas para desenvolvedores — geradores e validadores de CPF/CNPJ, JSON, Base64, hash, UUID, senhas, QR Code e muito mais. Tudo processado no seu navegador, sem armazenar nenhum dado. Open source.",
   // Domínio principal de produção.
   url: "https://abobiferramentas.com",
   locale: "pt-BR",
   author: {
     name: "Carlos Eduardo Costa Lima da Silva",
-    handle: "abobicaduco",
-    github: "https://github.com/abobicaduco",
+    handle: "caducosilva",
+    github: "https://github.com/caducosilva",
     gitlab: "https://gitlab.com/abobicarlo",
     linkedin: "https://linkedin.com/in/carlos-da-silva20ba5740a",
   },
   repo: {
-    github: "https://github.com/abobicaduco/orbita-devtools",
+    github: "https://github.com/caducosilva/orbita-devtools",
     gitlab: "https://gitlab.com/abobicarlo/orbita-devtools",
   },
+  // Chave PIX aleatória oficial para doações (padrão da marca caducosilva).
+  pixDoacoes: "f74458dc-2a36-49bd-9250-1cef4365ebb8",
   // Google AdSense — script é injetado no <head> via layout.
   adsense: {
     client: "ca-pub-7169685901436487",

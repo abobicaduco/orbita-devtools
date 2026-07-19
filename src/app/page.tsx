@@ -106,7 +106,7 @@ export default function Home() {
 }
 
 const FAQ = [
-  { q: "As ferramentas são gratuitas?", a: "Sim. Todas as ferramentas do AboBI Ferramentas são 100% gratuitas e open source, sem necessidade de cadastro." },
+  { q: "As ferramentas são gratuitas?", a: "Sim. Todas as ferramentas do caducosilva ferramentas são 100% gratuitas e open source, sem necessidade de cadastro." },
   { q: "Vocês guardam o que eu digito?", a: "Não. As ferramentas rodam inteiramente no seu navegador; nada do que você digita é enviado ou armazenado em servidores." },
   { q: "Os geradores de CPF/CNPJ/cartão são reais?", a: "Não. Os números são fictícios, válidos apenas pelos dígitos verificadores, para testar formulários e sistemas. Não use para fraudes." },
   { q: "Os horários de ônibus de Mogi são oficiais?", a: "São extraídos do portal oficial da Prefeitura de Mogi das Cruzes, apenas para consulta. Confirme sempre na fonte oficial antes de se programar." },

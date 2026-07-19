@@ -39,7 +39,7 @@ export default function OfertasPage() {
       <section className="space-y-3 text-sm leading-relaxed text-muted">
         <h2 className="font-display text-lg font-semibold text-white">Como funciona</h2>
         <p>
-          Esta vitrine reúne produtos que aparecem nos vídeos e conteúdos do AboBI. Cada produto recebe um
+          Esta vitrine reúne produtos que aparecem nos vídeos e conteúdos do caducosilva. Cada produto recebe um
           número fixo — quando ele é citado num vídeo, basta vir aqui e digitar o número para encontrar o
           link direto da loja (Shopee, Amazon, Mercado Livre ou AliExpress). A compra acontece
           inteiramente no site da loja, com os preços, o frete e as garantias dela.

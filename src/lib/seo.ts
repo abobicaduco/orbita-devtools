@@ -12,8 +12,8 @@ interface PageSeo {
 export function buildMetadata({ title, description, path = "/", keywords = [] }: PageSeo): Metadata {
   const url = new URL(path, siteConfig.url).toString();
   const fullTitle = path === "/" ? `${siteConfig.name} — ${siteConfig.tagline}` : `${title} | ${siteConfig.name}`;
-  // O layout raiz já aplica o template "%s | AboBI Ferramentas" ao <title>.
-  // Passar fullTitle aqui duplicava o sufixo (ex.: "X | AboBI | AboBI").
+  // O layout raiz já aplica o template "%s | caducosilva ferramentas" ao <title>.
+  // Passar fullTitle aqui duplicava o sufixo (ex.: "X | caducosilva | caducosilva").
   // OpenGraph/Twitter não usam o template, então mantêm o fullTitle.
   return {
     title: path === "/" ? fullTitle : title,
